@@ -107,7 +107,7 @@ header {
 .dropdown {
   width: 500px;
   position: absolute;
-  opacity: 0; /* TODO : reset to 0 */
+  opacity: 0;
   z-index: 2;
   border-top: 2px solid var(--border-color);
   background: var(--bg);
