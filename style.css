@@ -1,0 +1,156 @@
+/* Variables */
+/* Colors */
+:root {
+  --red1: hsl(304, 50%, 55%);
+  --red2: hsl(0, 90%, 41%);
+  --green1: hsl(79, 52%, 56%);
+  --green2: hsl(136, 41%, 53%);
+  --yellow0: hsl(15, 75%, 81%);
+  --yellow1: hsl(25, 85%, 70%);
+  --yellow2: hsl(45, 99%, 51%);
+  --solar: hsl(35, 54%, 78%);
+  --blue1: hsl(210, 100%, 74%);
+  --blue2: hsl(210, 92%, 67%);
+  --blue3: hsl(210, 84%, 59%);
+
+  --grey0: hsl(0, 0%, 90%);
+  --grey1: hsl(0, 0%, 75%);
+  --grey2: hsl(0, 0%, 55%);
+  --grey3: hsl(0, 0%, 35%);
+  --grey4: hsl(0, 0%, 25%);
+  --grey5: hsl(0, 0%, 15%);
+  --grey6: hsl(0, 0%, 5%);
+}
+
+.light {
+  --bg: var(--grey0);
+  --bg-nav: linear-gradient(to right, var(--grey0), var(--grey2));
+  --bg-dropdown: var(--grey0);
+  --text: var(--grey5);
+
+  --border-color: var(--blue3);
+  --bg-solar: var(--solar);
+}
+#light::before {
+  background: hsl(0, 0%, 90%);
+}
+
+.dark {
+  --bg: var(--grey3);
+  --bg-nav: linear-gradient(to right, var(--grey3), var(--grey4));
+  --bg-dropdown: var(--grey5);
+  --text: var(--grey0);
+
+  --border-color: var(--blue1);
+  --bg-solar: var(--solar);
+}
+#dark::before {
+  background: hsl(0, 0%, 25%);
+}
+
+.solar {
+  --grey0: hsl(40, 25%, 90%);
+  --grey1: hsl(45, 25%, 80%);
+  --grey2: hsl(55, 30%, 70%);
+  --grey3: hsl(35, 24%, 50%);
+  --grey4: hsl(32, 26%, 40%);
+  --grey5: hsl(27, 37%, 30%);
+  --grey6: hsl(23, 46%, 20%);
+}
+#solar::before {
+  background: var(--solar);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background: var(--bg-nav);
+  color: var(--text);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+header {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%, 0 0);
+  background: var(--bg-nav);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 3.5rem;
+  text-align: center;
+}
+
+.dropdown {
+  width: 500px;
+  position: absolute;
+  opacity: 0; /* TODO : reset to 0 */
+  z-index: 2;
+  border-top: 2px solid var(--border-color);
+  background: var(--bg);
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 4rem;
+  margin-top: 2rem;
+  padding: 0rem;
+
+  box-shadow: 5px 5px 10px var(--bg-dropdown);
+  transform: translateX(-40%);
+
+  transition: opacity 0.2s ease-out;
+}
+
+.has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-item a {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.dropdown-item a::before {
+  content: "";
+  border: 2px solid var(--border-color);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+footer {
+  text-align: center;
+}
