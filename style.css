@@ -108,7 +108,7 @@ header {
   width: 500px;
   position: absolute;
   opacity: 0;
-  z-index: 2;
+  z-index: -1;
   border-top: 2px solid var(--border-color);
   background: var(--bg);
   border-radius: 10px;
@@ -128,6 +128,7 @@ header {
 
 .has-dropdown:focus-within .dropdown {
   opacity: 1;
+  z-index: 2;
   pointer-events: auto;
 }
 
