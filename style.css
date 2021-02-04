@@ -155,3 +155,22 @@ header {
 footer {
   text-align: center;
 }
+
+@keyframes rainbow-animation {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#logo {
+  filter: grayscale(100%);
+}
+
+#logo:hover {
+  animation: rainbow-animation 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
