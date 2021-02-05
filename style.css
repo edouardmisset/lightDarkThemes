@@ -159,14 +159,22 @@ header {
   margin-right: 10px;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr minmax(40ch, 60ch) 1fr;
+}
+
+h2 {
+  grid-column: 2 / auto;
+}
+
 p {
+  grid-column: 2 / auto;
   line-height: 1.5;
   word-break: break-word;
   text-align: justify; /* Justifies text */
   hyphens: auto; /* Hypenation on auto */
   max-width: 60ch;
-  display: flex;
-  margin: auto;
 }
 
 h2 + p:first-letter {
