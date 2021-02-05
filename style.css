@@ -38,12 +38,16 @@
 
 @media (prefers-color-scheme: dark) {
   .dark {
-    --bg: var(--grey3);
+    --bg: var(--grey5);
     --bg-nav: linear-gradient(to right, var(--grey3), var(--grey4));
     --bg-dropdown: var(--grey5);
     --text: var(--grey0);
     --border-color: var(--blue1);
     --bg-solar: var(--solar);
+  }
+  .dark img {
+    /* Images should appear slightly less bright and contrasted in dark mode */
+    filter: brightness(0.8) contrast(1.2);
   }
   #dark::before {
     background: hsl(0, 0%, 25%);
@@ -88,6 +92,7 @@ a {
   height: 70px;
   background: var(--bg-nav);
   color: var(--text);
+  font-weight: bold;
 }
 
 .navbar-nav {
