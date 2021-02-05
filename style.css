@@ -25,7 +25,8 @@
 
 .light {
   --bg: var(--grey0);
-  --bg-nav: linear-gradient(to right, var(--grey0), var(--grey2));
+  --bg-nav: linear-gradient(to right, var(--grey1), var(--grey2));
+  --bg-header: linear-gradient(to right, var(--grey0), var(--grey1));
   --bg-dropdown: var(--grey0);
   --text: var(--grey5);
 
@@ -40,6 +41,7 @@
   .dark {
     --bg: var(--grey5);
     --bg-nav: linear-gradient(to right, var(--grey3), var(--grey4));
+    --bg-header: linear-gradient(to right, var(--grey4), var(--grey5));
     --bg-dropdown: var(--grey5);
     --text: var(--grey0);
     --border-color: var(--blue1);
@@ -89,7 +91,7 @@ a {
 
 .navbar {
   width: 100%;
-  height: 70px;
+  height: 5rem;
   background: var(--bg-nav);
   color: var(--text);
   font-weight: bold;
@@ -104,28 +106,26 @@ a {
 
 header {
   clip-path: polygon(50% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%, 0 0);
-  background: var(--bg-nav);
-  padding: 1rem;
+  background: var(--bg-header);
+  padding: 1rem 1rem 3.5rem 1rem;
   margin-bottom: 1rem;
-  padding-bottom: 3.5rem;
   text-align: center;
 }
 
 .dropdown {
-  width: 500px;
   position: absolute;
-  opacity: 0;
-  z-index: -1;
+  opacity: 0; /* TODO Reset to 0*/
+  z-index: -1; /* TODO ReSet to -1*/
   border-top: 2px solid var(--border-color);
   background: var(--bg);
-  border-radius: 10px;
+  border-radius: 1rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 4rem;
   margin-top: 2rem;
-  padding: 0rem;
+  padding: 0 1rem;
 
   box-shadow: 5px 5px 10px var(--bg-dropdown);
   transform: translateX(-40%);
@@ -144,8 +144,8 @@ header {
   align-items: center;
   width: 100%;
   height: 4rem;
+  margin: 0 1rem;
   padding-left: 10px;
-  font-weight: bold;
 }
 
 .dropdown-item a::before {
