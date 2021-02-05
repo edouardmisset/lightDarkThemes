@@ -27,14 +27,14 @@
   --bg: var(--grey0);
   --bg-nav: linear-gradient(to right, var(--grey1), var(--grey2));
   --bg-header: linear-gradient(to right, var(--grey0), var(--grey1));
-  --bg-dropdown: var(--grey0);
+  --bg-dropdown: var(--grey2);
   --text: var(--grey5);
-
   --border-color: var(--blue3);
   --bg-solar: var(--solar);
+  --shadow: var(--grey4);
 }
 #light::before {
-  background: hsl(0, 0%, 90%);
+  background: var(--grey0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,17 +42,18 @@
     --bg: var(--grey5);
     --bg-nav: linear-gradient(to right, var(--grey3), var(--grey4));
     --bg-header: linear-gradient(to right, var(--grey4), var(--grey5));
-    --bg-dropdown: var(--grey5);
+    --bg-dropdown: var(--grey3);
     --text: var(--grey0);
     --border-color: var(--blue1);
     --bg-solar: var(--solar);
+    --shadow: var(--grey5); /* TODO What value to use ?? */
   }
   .dark img {
     /* Images should appear slightly less bright and contrasted in dark mode */
     filter: brightness(0.8) contrast(1.2);
   }
   #dark::before {
-    background: hsl(0, 0%, 25%);
+    background: var(--grey4);
   }
 }
 
@@ -114,10 +115,10 @@ header {
 
 .dropdown {
   position: absolute;
-  opacity: 1; /* TODO Reset to 0*/
-  z-index: 2; /* TODO ReSet to -1*/
+  opacity: 0; /* TODO Reset to 0*/
+  z-index: -1; /* TODO ReSet to -1*/
   border-top: 2px solid var(--border-color);
-  background: var(--bg);
+  background: var(--bg-dropdown);
   border-radius: 1rem;
 
   display: grid;
@@ -126,7 +127,7 @@ header {
   margin-top: 2rem;
   padding: 1rem;
 
-  box-shadow: 5px 5px 10px var(--bg-dropdown);
+  box-shadow: 0.25rem 0.25rem 1rem var(--shadow);
   transform: translateX(-40%);
 
   transition: opacity 0.2s ease-out;
@@ -158,8 +159,19 @@ header {
   margin-right: 10px;
 }
 
-footer {
-  text-align: center;
+p {
+  line-height: 1.5;
+  word-break: break-word;
+  text-align: justify; /* Justifies text */
+  hyphens: auto; /* Hypenation on auto */
+  max-width: 60ch;
+  display: flex;
+  margin: auto;
+}
+
+h2 + p:first-letter {
+  font-size: 2em;
+  line-height: 0; /* The line-height must be adjusted to compensate for the increased font size, otherwise the leading for the overall line is disrupted. I find that any values below 0.4 work. */
 }
 
 @keyframes rainbow-animation {
