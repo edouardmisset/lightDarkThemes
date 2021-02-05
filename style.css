@@ -114,18 +114,17 @@ header {
 
 .dropdown {
   position: absolute;
-  opacity: 0; /* TODO Reset to 0*/
-  z-index: -1; /* TODO ReSet to -1*/
+  opacity: 1; /* TODO Reset to 0*/
+  z-index: 2; /* TODO ReSet to -1*/
   border-top: 2px solid var(--border-color);
   background: var(--bg);
   border-radius: 1rem;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
-  height: 4rem;
   margin-top: 2rem;
-  padding: 0 1rem;
+  padding: 1rem;
 
   box-shadow: 5px 5px 10px var(--bg-dropdown);
   transform: translateX(-40%);
