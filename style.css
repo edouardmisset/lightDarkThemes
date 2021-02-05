@@ -96,6 +96,7 @@ a {
   background: var(--bg-nav);
   color: var(--text);
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .navbar-nav {
@@ -174,7 +175,6 @@ p {
   word-break: break-word;
   text-align: justify; /* Justifies text */
   hyphens: auto; /* Hypenation on auto */
-  max-width: 60ch;
 }
 
 h2 + p:first-letter {
